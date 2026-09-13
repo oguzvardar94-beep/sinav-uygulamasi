@@ -47,3 +47,13 @@ button, select { font: inherit; }
   body[data-print-mode="student"] .teacher-answer-key { display: none !important; }
   .print-sheet article { border-radius: 0 !important; }
 }
+.print-year, .print-instructions, .question-points, .answer-lines { display: none; }
+@media print {
+  .print-year, .print-instructions { display: block !important; text-align: center !important; font-size: 9pt !important; margin-top: 2mm !important; }
+  .print-instructions { display: flex !important; justify-content: space-between !important; text-align: left !important; margin-top: 4mm !important; }
+  .question-points { display: inline !important; font-weight: bold !important; white-space: nowrap !important; }
+  .print-open-ended { display: grid !important; grid-template-columns: 1fr 1fr !important; column-gap: 9mm !important; position: relative !important; }
+  .print-open-ended::after { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid #9ca3af; transform: translateX(-4.5mm); }
+  .print-open-ended article { margin-bottom: 0 !important; padding: 3mm !important; }
+  .answer-lines { display: block !important; font-size: 8pt !important; line-height: 1.9 !important; color: #6b7280 !important; margin-top: 3mm !important; }
+}
