@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     });
   }
 
-  const prompt = `Sen Türkiye ortaokul müfredatına uygun sınav hazırlayan bir ölçme-değerlendirme uzmanısın.\n\nSınıf: ${body.grade}\nDers: ${body.subject}\nKonular: ${body.topics.join(", ")}\nSoru sayısı: ${body.questionCount}\nZorluk: ${body.difficulty}\nSoru türü: ${body.questionType}\nDağılım: ${JSON.stringify(body.distribution)}\n\nYalnızca bu konular kapsamında, seçilen dağılıma uyan sorular üret. Her soruda soru metni, seçenekler, doğru cevap, kısa çözüm, konu ve zorluk alanları olsun. Sonucu JSON olarak döndür.`;
+  const prompt = `Sen Türkiye ortaokul müfredatına uygun sınav hazırlayan bir ölçme-değerlendirme uzmanısın.\n\nSınıf: ${body.grade}\nDers: ${body.subject}\nKonular: ${body.topics.join(", ")}\nSoru sayısı: ${body.questionCount}\nZorluk: ${body.difficulty}\nSoru türü: ${body.questionType}\nDağılım: ${JSON.stringify(body.distribution)}\n\nYalnızca bu konular kapsamında, seçilen dağılıma uyan sorular üret. Her soruda soru metni, seçenekler, doğru cevap, kısa çözüm, konu ve zorluk alanları olsun. Şekil gereken sorularda sekil alanına yalnızca "köprü-kamyon", "sayı doğrusu" veya "yok" yaz. Köprü-kamyon sorularında kopru_yuksekligi ve kamyon_yuksekligi alanlarını da ekle. Sonucu JSON olarak döndür.`;
   const aiResponse = await fetch("https://api.openai.com/v1/responses", {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
