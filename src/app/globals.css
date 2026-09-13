@@ -82,7 +82,7 @@ button, select { font: inherit; }
 .print-exam-footer { display: none; }
 @media print {
   /* Reference exam layout: top-to-bottom in each column, then continue on the right. */
-  .print-open-ended { display: block !important; column-count: 2 !important; column-gap: 10mm !important; column-rule: 1px solid #555 !important; column-fill: auto !important; height: 235mm !important; overflow: visible !important; border-top: 1px solid #555 !important; }
-  .print-open-ended article { display: block !important; width: 100% !important; break-inside: avoid !important; page-break-inside: avoid !important; margin: 0 0 5mm !important; padding: 2mm 3mm !important; }
-  .print-open-ended::after { display: none !important; }
+  .print-two-column { display: block !important; column-count: 2 !important; column-gap: 10mm !important; column-rule: 1px solid #555 !important; column-fill: balance !important; border-top: 1px solid #555 !important; }
+  .print-two-column article { display: block !important; width: 100% !important; break-inside: avoid !important; page-break-inside: avoid !important; margin: 0 0 5mm !important; padding: 2mm 3mm !important; }
+  .print-two-column::after { display: none !important; }
 }

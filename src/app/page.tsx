@@ -46,7 +46,7 @@ function Exam({ data, topics, grade, subject, count, questionType, schoolName, e
   return <div className="py-7 print-sheet">
     <div className="print-school-header"><p className="school-print-name">{schoolName || "...... ANADOLU LİSESİ"}</p><p>{examYear} EĞİTİM-ÖĞRETİM YILI</p><p>{subject.toUpperCase()} {grade.toUpperCase()} 1. DÖNEM 1. YAZILI SINAVI</p><table className="print-info-table"><tbody><tr><th>ADI SOYADI</th><th>NOSU</th><th>SINIFI</th><th>TARİH</th><th>SÜRE</th><th>PUANI</th></tr><tr><td></td><td></td><td></td><td></td><td>40 DK</td><td></td></tr></tbody></table><p className="print-instruction">Soruları dikkatlice okuyunuz ve cevaplarınızı ilgili alanlara yazınız.</p></div>
     <div className="mb-6 flex justify-between"><div><p className="school-print-name print:hidden text-sm font-bold">{schoolName || "Okul adı belirtilmedi"}</p><p className="text-sm font-semibold">Üretilen sınav</p><p className="text-xs text-[#64748b]">{questions.length || count} soru · {questionType}</p></div></div>
-    {questions.length ? <div className={`space-y-4 print-question-list ${questionType === "Açık uçlu" || questionType === "Kısa cevap" ? "print-open-ended" : ""}`}>{questions.map((question, index) => {
+    {questions.length ? <div className={`space-y-4 print-question-list print-two-column ${questionType === "Açık uçlu" || questionType === "Kısa cevap" ? "print-open-ended" : ""}`}>{questions.map((question, index) => {
       const text = String(question.soru_metni || question.questionText || question.text || "");
       const options = question.secenekler as Record<string, string> | undefined;
       const answer = String(question.dogru_cevap || question.correctAnswer || "");
