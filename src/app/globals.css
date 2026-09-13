@@ -65,3 +65,18 @@ button, select { font: inherit; }
 @media print {
   .print-open-ended { display: grid !important; grid-auto-flow: column !important; grid-template-columns: calc(50% - 4.5mm) calc(50% - 4.5mm) !important; grid-template-rows: repeat(5, auto) !important; column-gap: 9mm !important; width: 100% !important; }
 }
+@media print {
+  .print-school-header { margin-bottom: 5mm !important; border-bottom: 0 !important; padding-bottom: 2mm !important; line-height: 1.25 !important; }
+  .print-school-header > p { margin: 0 !important; font-size: 10pt !important; font-weight: 700 !important; }
+  .print-school-header .school-print-name { font-size: 11pt !important; }
+  .print-info-table { width: 100% !important; border-collapse: collapse !important; table-layout: fixed !important; margin-top: 4mm !important; font-size: 7pt !important; }
+  .print-info-table th, .print-info-table td { border: 1px solid #555 !important; height: 6mm !important; padding: 1mm !important; text-align: center !important; }
+  .print-info-table th { font-weight: 700 !important; }
+  .print-info-table td { height: 8mm !important; }
+  .print-instruction { text-align: left !important; font-size: 8pt !important; font-weight: 400 !important; margin-top: 2mm !important; }
+  .print-exam-footer { display: block !important; margin-top: 8mm !important; font-size: 9pt !important; text-align: left !important; }
+  .print-open-ended { border-top: 1px solid #555 !important; padding-top: 4mm !important; }
+  .print-sheet { position: relative !important; }
+  .print-sheet::before { content: "T.C.  MİLLÎ EĞİTİM BAKANLIĞI"; position: fixed !important; top: 52%; left: 50%; transform: translate(-50%, -50%) rotate(-32deg); font-size: 24pt; color: rgba(100,100,100,.08); z-index: -1; white-space: nowrap; }
+}
+.print-exam-footer { display: none; }
