@@ -43,7 +43,7 @@ function Diagram({ type, question }: { type: string; question: Record<string, un
 function Exam({ data, topics, grade, subject, count, questionType, schoolName, onPrint }: { data: GeneratedExamData | null; topics: string[]; grade: string; subject: string; count: string; questionType: string; schoolName: string; onPrint: () => void }) {
   const questions = data?.sorular || data?.questions || [];
   return <div className="py-7 print-sheet">
-    <div className="print-school-header"><p className="school-print-name text-center text-xl font-bold">{schoolName || "Okul adı belirtilmedi"}</p><p className="print-exam-title text-center text-lg font-bold">{grade} {subject} Sınavı</p></div>
+    <div className="print-school-header"><p className="school-print-name text-center text-xl font-bold">{schoolName || "Okul adı belirtilmedi"}</p><p className="print-exam-title text-center text-lg font-bold">{grade} {subject} Sınavı</p><div className="print-student-info"><span>Ad Soyad: ........................................................</span><span>Sınıf: ............</span><span>No: ............</span></div></div>
     <div className="mb-6 flex justify-between"><div><p className="school-print-name print:hidden text-sm font-bold">{schoolName || "Okul adı belirtilmedi"}</p><p className="text-sm font-semibold">Üretilen sınav</p><p className="text-xs text-[#64748b]">{questions.length || count} soru · {questionType}</p></div></div>
     {questions.length ? <div className="space-y-4">{questions.map((question, index) => {
       const text = String(question.soru_metni || question.questionText || question.text || "");
