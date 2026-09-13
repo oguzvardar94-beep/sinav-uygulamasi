@@ -39,3 +39,11 @@ button, select { font: inherit; }
 @media print {
   .print-option { border-color: #9ca3af !important; background: white !important; color: #111 !important; }
 }
+.teacher-answer-key { display: none; }
+@media print {
+  .print-sheet > .mb-6 { display: none !important; }
+  .teacher-answer-key { display: none; }
+  body[data-print-mode="teacher"] .teacher-answer-key { display: block !important; margin-top: 8mm !important; padding-top: 4mm !important; border-top: 1px solid #111 !important; font-size: 10pt !important; }
+  body[data-print-mode="student"] .teacher-answer-key { display: none !important; }
+  .print-sheet article { border-radius: 0 !important; }
+}
